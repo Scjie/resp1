@@ -1,22 +1,29 @@
 package com.example.demo.Model;
 
+
+import org.springframework.boot.context.properties.ConfigurationProperties;
+import org.springframework.context.annotation.PropertySource;
+import org.springframework.stereotype.Component;
+@PropertySource("classpath:test.properties")
+@ConfigurationProperties(prefix = "my")
+@Component
 public class User {
-    private String user;
-    private String password;
+    private String name;
+    private String age;
 
-    public String getUser() {
-        return user;
+    public String getName() {
+        return name;
     }
 
-    public void setUser(String user) {
-        this.user = user;
+    public void setName(String name) {
+        this.name = name;
     }
 
-    public String getPassword() {
-        return password;
+    public String getAge() {
+        return age;
     }
 
-    public void setPassword(String password) {
-        this.password = password;
+    public void setAge(String age) {
+        this.age = age;
     }
 }
